@@ -1,0 +1,37 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JRadioButton;
+import java.awt.BorderLayout;
+
+public class WeatherGUI extends JFrame {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					WeatherGUI frame = new WeatherGUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public WeatherGUI() {
+		setBounds(100, 100, 450, 300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
+		getContentPane().add(rdbtnNewRadioButton, BorderLayout.NORTH);
+
+	}
+
+}

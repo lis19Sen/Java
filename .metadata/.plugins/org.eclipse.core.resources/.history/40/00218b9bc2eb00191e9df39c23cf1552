@@ -1,0 +1,5 @@
+package pnbaplayerstatus;
+
+public enum DraftedStatus {
+
+}
