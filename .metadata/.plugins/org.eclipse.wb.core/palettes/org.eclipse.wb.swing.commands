@@ -4,4 +4,8 @@
 		id="org.eclipse.wb.swing.containers javax.swing.JPanel"
 		category="org.eclipse.wb.swing.containers"
 		nextEntry="org.eclipse.wb.swing.containers javax.swing.JTabbedPane"/>
+	<moveEntry
+		id="org.eclipse.wb.swing.components javax.swing.JTextArea"
+		category="org.eclipse.wb.swing.components"
+		nextEntry="org.eclipse.wb.swing.components javax.swing.JButton"/>
 </commands>
