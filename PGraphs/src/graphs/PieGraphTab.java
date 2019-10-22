@@ -7,6 +7,7 @@ import java.util.Locale;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -21,11 +22,19 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class PieGraphTab extends JFrame {
 
 	private JPanel contentPane;
 	JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+	private DefaultTableModel tm = new DefaultTableModel(
+			new Object[][] {}, new String[] { "ID","First Name", "Last Name", "Phone"}
+			);
+	private JPanel panel;
+	private JTable table;
+	private JScrollPane scrollPane_1;
 	/**
 	 * Launch the application.
 	 */
@@ -58,6 +67,21 @@ public class PieGraphTab extends JFrame {
 		createALineCharTab();
 	    createAPieGraphTab();
 	    createABarChartTab();
+		
+		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(48, 11, 446, 378);
+		panel.add(scrollPane_1);
+		table = new JTable();
+		scrollPane_1.setViewportView(table);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"ID", "First Name", "Last Name", "Phone"
+			}
+		));
+		table.setModel(tm);
+		drawTable();
 	}
 	public void createAPieGraphTab() {
 		
@@ -120,5 +144,21 @@ public class PieGraphTab extends JFrame {
 				dataset, PlotOrientation.VERTICAL, true, true, false);
 		ChartPanel mypanel3 = new ChartPanel(chart);
 		tabbedPane.add("Bar Chart", mypanel3);
+		
+		panel = new JPanel();
+		tabbedPane.addTab("New tab", null, panel, null);
+		panel.setLayout(null);
+	}
+	private void drawTable() {
+		tm.setRowCount(0);
+		for (int i = 0; i < 150; i++)
+		{
+			Object[] object = new Object[4];
+			object[0] = Integer.toString(i+1);
+			object[1] = "people.get(i).getFirst()";
+			object[2] = "people.get(i).getFirst()";
+			object[3] = "people.get(i).getFirst()";
+			tm.addRow(object);
+		}
 	}
 }
