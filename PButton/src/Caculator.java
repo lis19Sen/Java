@@ -152,5 +152,9 @@ public class Caculator extends JFrame {
 		});
 		btnNewButton_6.setBounds(322, 103, 89, 23);
 		contentPane.add(btnNewButton_6);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(21, 11, 390, 249);
+		contentPane.add(panel);
 	}
 }
