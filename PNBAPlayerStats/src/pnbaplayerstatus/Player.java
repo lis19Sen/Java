@@ -5,20 +5,21 @@ import java.time.LocalDate;
 public class Player {
 
 	private String name;
-	private String team;
+	private Team team; //the type Team is enum class
 	private String college;
 	private int age,draft_round,draft_number;
 	private double height,weight;
 	private Country country; //the type Country is enum class
-	private DraftedStatus draftedStatus;
+	
 	private LocalDate draft_Year,season;
 	private int gp;          //gp means Number of games played
 	private double pts,reb,ast; //pts:points;reb:rebound;ast:assist;
 	private double net_rating,dreb_pct,usg_pct, ts_pct,ast_pct;
 	
-	public Player(String name,String team,String college,int age, int draft_round,
-			int draft_number,double height,double weight,Country country, int gp, double pts,double reb,double ast,
-			double net_rating,double dreb_pct,double usg_pct,double ts_pct,double act_pct) 
+	public Player(String name,Team team,String college,int age, int draft_round,
+			int draft_number,double height,double weight,Country country, int gp, 
+			double pts,double reb,double ast,double net_rating,double dreb_pct, 
+			double usg_pct, double ts_pct,double act_pct) 
 	{
 		this.name = name;
 		this.team = team;
@@ -31,7 +32,7 @@ public class Player {
 		this.country = country;
 		this.gp = gp;
 		this.pts = pts;
-		this
+		
 	}
 
 	public String getName() {
@@ -42,11 +43,11 @@ public class Player {
 		this.name = name;
 	}
 
-	public String getTeam() {
+	public Team getTeam() {
 		return team;
 	}
 
-	public void setTeam(String team) {
+	public void setTeam(Team team) {
 		this.team = team;
 	}
 
