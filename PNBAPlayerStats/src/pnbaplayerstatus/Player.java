@@ -2,26 +2,26 @@ package pnbaplayerstatus;
 
 import java.time.LocalDate;
 
-public class Player {
+public class Player implements Comparable<Player>
+{
 
-	private String name;
-	private Team team; //the type Team is enum class
+	private String firstName, lastName;	
 	private String college;
-	private int age,draft_round,draft_number;
-	private double height,weight;
+	private int age,draft_round,draft_number,gp;//gp means Number of games played
+	private double height,weight,pts,reb,ast,net_rating,
+	                oreb_pct,dreb_pct,usg_pct, ts_pct,ast_pct; //pts:points;reb:rebound;ast:assist;
 	private Country country; //the type Country is enum class
-	
+	private Team team; //the type Team is enum class
 	private LocalDate draft_Year,season;
-	private int gp;          //gp means Number of games played
-	private double pts,reb,ast; //pts:points;reb:rebound;ast:assist;
-	private double net_rating,dreb_pct,usg_pct, ts_pct,ast_pct;
+	        
 	
-	public Player(String name,Team team,String college,int age, int draft_round,
+	public Player(String firstName,String lastName,Team team,String college,int age, int draft_round,
 			int draft_number,double height,double weight,Country country, int gp, 
-			double pts,double reb,double ast,double net_rating,double dreb_pct, 
-			double usg_pct, double ts_pct,double act_pct) 
+			double pts,double reb,double ast,double net_rating,double oreb_pct,
+			double dreb_pct, double usg_pct, double ts_pct,double ast_pct) 
 	{
-		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.team = team;
 		this.college = college;
 		this.age = age;
@@ -32,15 +32,39 @@ public class Player {
 		this.country = country;
 		this.gp = gp;
 		this.pts = pts;
+		this.reb = reb;
+		this.ast = ast;
+		this.net_rating = net_rating;
+		this.oreb_pct = oreb_pct;
+		this.dreb_pct = dreb_pct;
+		this.usg_pct = usg_pct;
+		this.ts_pct = ts_pct;
+		this.ast_pct = ast_pct;
 		
 	}
 
-	public String getName() {
-		return name;
+	public double getOreb_pct() {
+		return oreb_pct;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setOreb_pct(double oreb_pct) {
+		this.oreb_pct = oreb_pct;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public Team getTeam() {
@@ -195,13 +219,25 @@ public class Player {
 		this.ast_pct = ast_pct;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Player [name=" + name + ", team=" + team + ", college=" + college + ", age=" + age + ", draft_round="
-				+ draft_round + ", draft_number=" + draft_number + ", height=" + height + ", weight=" + weight
-				+ ", country=" + country + ", draft_Year=" + draft_Year + ", season=" + season + ", gp=" + gp + ", pts="
-				+ pts + ", reb=" + reb + ", ast=" + ast + ", net_rating=" + net_rating + ", dreb_pct=" + dreb_pct
-				+ ", usg_pct=" + usg_pct + ", ts_pct=" + ts_pct + ", ast_pct=" + ast_pct + "]";
+		return "Player [firstName=" + firstName + ", lastName=" + lastName + ", college=" + college + ", age=" + age
+				+ ", draft_round=" + draft_round + ", draft_number=" + draft_number + ", gp=" + gp + ", height="
+				+ height + ", weight=" + weight + ", pts=" + pts + ", reb=" + reb + ", ast=" + ast + ", net_rating="
+				+ net_rating + ", oreb_pct=" + oreb_pct + ", dreb_pct=" + dreb_pct + ", usg_pct=" + usg_pct
+				+ ", ts_pct=" + ts_pct + ", ast_pct=" + ast_pct + ", country=" + country + ", team=" + team
+				+ ", draft_Year=" + draft_Year + ", season=" + season + "]";
 	}
-	
+
+	@Override
+	public int compareTo(Player player1) {
+		// TODO Auto-generated method stub
+		if(this.getLastName().equals(player1.getLastName()))
+			return this.getFirstName().compareTo(player1.getFirstName());
+	else
+		return this.getLastName().compareTo(player1.getLastName());
+	}
+
 }
