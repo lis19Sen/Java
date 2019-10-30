@@ -7,7 +7,6 @@
     <fullyQualifiedTypeName name="friend.Relationship"/>
     <fullyQualifiedTypeName name="friend.Gender"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="org.junit.rules.ExpectedException"/>
     <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.File"/>
@@ -51,4 +50,6 @@
     <fullyQualifiedTypeName name="org.jfree.chart.ChartFactory"/>
     <fullyQualifiedTypeName name="org.jfree.chart.plot.PlotOrientation"/>
     <fullyQualifiedTypeName name="org.jfree.chart.ChartPanel"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
 </qualifiedTypeNameHistroy>

@@ -14,32 +14,37 @@ public class Player implements Comparable<Player>
 	private Team team; //the type Team is enum class
 	private LocalDate draft_Year,season;
 	        
-	
+	public Player( String firstName, String lastName, double height,double weight, double pts, 
+			double reb,double ast) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.height = height;
+		this.weight = weight;
+		this.pts = pts;
+		this.reb = reb;
+		this.ast = ast;
+	}
 	public Player(String firstName,String lastName,Team team,String college,int age, int draft_round,
 			int draft_number,double height,double weight,Country country, int gp, 
 			double pts,double reb,double ast,double net_rating,double oreb_pct,
-			double dreb_pct, double usg_pct, double ts_pct,double ast_pct) 
+			double dreb_pct, double usg_pct, double ts_pct,double ast_pct,LocalDate draft_Year,LocalDate season) 
 	{
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this(firstName,lastName,height,weight,pts,reb,ast);
 		this.team = team;
 		this.college = college;
 		this.age = age;
 		this.draft_round = draft_round;
 		this.draft_number = draft_number;
-		this.height = height;
-		this.weight = weight;
 		this.country = country;
 		this.gp = gp;
-		this.pts = pts;
-		this.reb = reb;
-		this.ast = ast;
 		this.net_rating = net_rating;
 		this.oreb_pct = oreb_pct;
 		this.dreb_pct = dreb_pct;
 		this.usg_pct = usg_pct;
 		this.ts_pct = ts_pct;
 		this.ast_pct = ast_pct;
+		this.draft_Year = draft_Year;
+		this.season = season;
 		
 	}
 
@@ -229,6 +234,11 @@ public class Player implements Comparable<Player>
 				+ net_rating + ", oreb_pct=" + oreb_pct + ", dreb_pct=" + dreb_pct + ", usg_pct=" + usg_pct
 				+ ", ts_pct=" + ts_pct + ", ast_pct=" + ast_pct + ", country=" + country + ", team=" + team
 				+ ", draft_Year=" + draft_Year + ", season=" + season + "]";
+	}
+	
+	public String toString1() {
+		return "Player [firstName=" + firstName + ", lastName=" + lastName + ",  height="
+				+ height + ", weight=" + weight + ", pts=" + pts + ", reb=" + reb + ", ast=" + ast;
 	}
 
 	@Override
