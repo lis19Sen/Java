@@ -237,8 +237,10 @@ public class Player implements Comparable<Player>
 	}
 	
 	public String toString1() {
-		return "Player [firstName=" + firstName + ", lastName=" + lastName + ",  height="
-				+ height + ", weight=" + weight + ", pts=" + pts + ", reb=" + reb + ", ast=" + ast;
+		/*return "Player [firstName=" + firstName + ", lastName=" + lastName + ",  height="
+				+ height + ", weight=" + weight + ", pts=" + pts + ", reb=" + reb + ", ast=" + ast+ "]";*/
+		return "Player: " + firstName + " " + lastName + ",  height="
+		+ height + "cm, weight=" + weight + "kg, pts=" + pts + ", reb=" + reb + ", ast=" + ast+ "]";
 	}
 
 	@Override

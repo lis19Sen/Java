@@ -12,40 +12,13 @@ public class PlayerApp {
 		// TODO Auto-generated method stub
 
 		ArrayList<Player> players = new ArrayList<>();
-		File text = new File("data.csv");
-		String firstName;
-		String lastName;
-		String height;
-		String weight;
-		String pts; 
-		String reb;
-		String ast;
-        try {
-			
-	          Scanner scan = new Scanner(text);
-		      while(scan.hasNextLine())
-		      {
-			   String line = scan.nextLine();
-			   String[] parts = line.split(",");
-			   String[] nameParts = parts[1].split(" ");
-			   firstName = nameParts[0];
-			   lastName = nameParts[1];
-			   height = parts[4];
-			   weight = parts[5];
-			   pts = parts[12];
-			   reb = parts[13];
-			   ast = parts[14];
-			   players.add(new Player(firstName, lastName,Double.parseDouble(height),Double.parseDouble(weight),
-					Double.parseDouble(pts),Double.parseDouble(reb),Double.parseDouble(ast)));
-	          }
-		    } catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();}
-		Collections.sort(players);
+		ReadFile.load(players);
+        HeightComparator cp = new HeightComparator();
+        Collections.sort(players,cp);
 		for (Player item:players)
 		{
 			System.out.println(item.toString1());
-		}
+		}				
 	}
 
 }

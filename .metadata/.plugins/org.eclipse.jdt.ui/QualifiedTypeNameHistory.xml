@@ -16,10 +16,8 @@
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="friend.genderCompare"/>
     <fullyQualifiedTypeName name="friend.AgeCompare"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="pcomputer.Computer"/>
     <fullyQualifiedTypeName name="panimal.Animal"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="jdk.internal.net.http.common.Demand"/>
     <fullyQualifiedTypeName name="panimal.Domesticated"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
@@ -28,7 +26,6 @@
     <fullyQualifiedTypeName name="pmanulbox.OneFrameButton"/>
     <fullyQualifiedTypeName name="jdk.internal.platform.Container"/>
     <fullyQualifiedTypeName name="pmanulbox.SimpleGUI"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="javax.swing.JTextField"/>
     <fullyQualifiedTypeName name="javax.swing.JButton"/>
@@ -52,4 +49,8 @@
     <fullyQualifiedTypeName name="org.jfree.chart.ChartPanel"/>
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="pnbaplayerstatus.HeightComparator"/>
 </qualifiedTypeNameHistroy>
