@@ -11,14 +11,12 @@ public class PlayerApp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ArrayList<Player> players = new ArrayList<>();
-		ReadFile.load(players);
-        HeightComparator cp = new HeightComparator();
-        Collections.sort(players,cp);
-		for (Player item:players)
-		{
-			System.out.println(item.toString1());
-		}				
+		
+		
+		PlayersStatusGUI myFrame = new PlayersStatusGUI();
+		myFrame.setTitle("Player Status");
+		myFrame.setSize(800,600);
+		myFrame.setVisible(true);
 	}
 
 }
