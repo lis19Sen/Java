@@ -81,8 +81,8 @@ class ArrayAndListUtilitiesTest {
 	}
 	@Test
 	public void testBubbleSortIntArray() {
-	      int[] numbers = {5,2,8,3,4,9};
-	      int[] expected = {2,3,4,5,8,9};
+	      int[] numbers = {5,2,8,3,3,4,2,9};
+	      int[] expected = {2,2,3,3,4,5,8,9};
 	      ArrayAndListUtilities.bubbleSort1(numbers);
 	      assertArrayEquals(expected, numbers);;
 	}

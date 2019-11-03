@@ -17,9 +17,8 @@ public class ReadFile {
 	String weight;
 	String pts; 
 	String reb;
-	String ast;{
+	String ast;
     try {
-		
           Scanner scan = new Scanner(text);
 	      while(scan.hasNextLine())
 	      {
@@ -44,7 +43,6 @@ public class ReadFile {
 	/*for (Player item:players)
 	{
 		System.out.println(item.toString1());
-	}*/
-   }
+	}*/ 
  }
 }

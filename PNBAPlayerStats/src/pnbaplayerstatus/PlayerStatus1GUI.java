@@ -58,8 +58,8 @@ public class PlayerStatus1GUI extends JFrame implements ActionListener
 	    private DefaultTableModel tm = new DefaultTableModel(
 				new Object[][] {}, new String[] { "ID", "FirstName", "LastName", "Height", "Weight", "pts", "reb", "ast"}
 				);
-	    private JTable table;
-		private JScrollPane scrollPane_1;
+	    //private JTable table;
+		//private JScrollPane scrollPane_1;
 		private JTable table_1;
 		private JScrollPane scrollPane;
 
@@ -189,13 +189,42 @@ public class PlayerStatus1GUI extends JFrame implements ActionListener
 		}
 	}
 	public void createAPieGraphTab() {
-		
+		ArrayList<Player> players = new ArrayList<>();
+		ArrayList<Double> playerHeight = new ArrayList<>();
+		ReadFile.load(players);
+		for (int i = 0; i< players.size(); i++)
+		{
+			playerHeight.add(players.get(i).getHeight());
+		}
+		int highCount=0;//more than 200.00cm
+		int mediumCount=0;
+		int notHighCount=0;
+		for(Double item:playerHeight)
+		{
+			if(item >= 200.00)
+			{
+				highCount++;
+			}
+			else if(item >= 190.00)
+			{
+				mediumCount++;
+			}
+			else
+			{
+				notHighCount++;
+			}
+		}
+        HeightComparator hcp = new HeightComparator();
+        Collections.sort(players,hcp);
+        
+        
+        
 		DefaultPieDataset data = new DefaultPieDataset();
-		data.setValue("Principal Lecturer", 5);
-		data.setValue("Lecturer", 7);
-		data.setValue("Administration", 2);
+		data.setValue("Moer than 200.00cm", highCount);
+		data.setValue("Moer than 190.00", mediumCount);
+		data.setValue("Less than 190.00", notHighCount);
 		//create a chart
-		JFreeChart chart = ChartFactory.createPieChart("Sample pie Chart", data, true, true, Locale.ENGLISH);
+		JFreeChart chart = ChartFactory.createPieChart("Player height pie Chart", data, true, true, Locale.ENGLISH);
 		
 		//create and display a frame
 		ChartPanel mypanel = new ChartPanel(chart);
