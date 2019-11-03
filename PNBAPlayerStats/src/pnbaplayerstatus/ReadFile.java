@@ -10,7 +10,7 @@ public class ReadFile {
 
 	public static void load(ArrayList<Player> players) {
 	String temp;
-	File text = new File("data.csv");
+	File text = new File("data2.csv");
 	String firstName;
 	String lastName;
 	String height;

@@ -13,7 +13,7 @@ public class PlayerApp {
 
 		
 		
-		PlayersStatusGUI myFrame = new PlayersStatusGUI();
+		PlayerStatus1GUI myFrame = new PlayerStatus1GUI();
 		myFrame.setTitle("Player Status");
 		myFrame.setSize(800,600);
 		myFrame.setVisible(true);

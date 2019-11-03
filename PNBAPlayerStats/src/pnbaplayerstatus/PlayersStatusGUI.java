@@ -52,11 +52,6 @@ public class PlayersStatusGUI extends JFrame implements ActionListener{
 		showButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		showButton.setBounds(551, 318, 100, 30);
 		exitButton = new JButton("Exit");
-		exitButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
 		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		exitButton.setSize(100, 30);
 		exitButton.setLocation(551, 381);
